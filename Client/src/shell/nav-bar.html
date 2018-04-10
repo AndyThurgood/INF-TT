@@ -1,0 +1,34 @@
+<template bindable="router">
+    <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top sticky-navigation" role="navigation" style="top: 0px; opacity: 1;">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mobile-navigation">
+                        <span class="sr-only">Toggle navigation</span>
+                        <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="../../static/images/logo-nav.png" alt="boxconceptsLogo">
+                </a>
+            </div>
+            <div id="mobile-navigation" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-left main-navigation small-text">
+                    <li repeat.for="row of router.navigation" class="${row.isActive ? 'active' : ''}">
+                        <a data-toggle="collapse" data-target="#bs-example-navbar-collapse-1.in" href.bind="row.href">${row.title}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <nav  class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+</template>

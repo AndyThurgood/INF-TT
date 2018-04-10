@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for index.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="prettify.css" />
+    <link rel="stylesheet" href="base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="index.html">All files</a> index.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">91.53% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>54/59</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">90.48% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>19/21</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">91.11% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>41/45</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56</td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import { inject } from 'aurelia-framework';
+import ReferenceDataService from './services/referenceDataService';
+import ReportDataService from './services/reportDataService';
+import AuthorityReport from './models/authorityReport';
+&nbsp;
+&nbsp;
+/** fhrs index ViewModel, responsible data orchestration and view logic */
+@inject(ReferenceDataService, ReportDataService)
+export class Index {
+&nbsp;
+    private referenceDataService: ReferenceDataService;
+    private reportDataService: ReportDataService;
+&nbsp;
+    constructor(referenceDataService, reportDataservice) {
+        this.referenceDataService = referenceDataService;
+        this.reportDataService = reportDataservice;
+    }
+&nbsp;
+    public authorityReport: AuthorityReport;
+    public isDataLoading: boolean = false
+    public fhrsAuthorities;
+    public selectedAuthority;
+&nbsp;
+    /** ViewModel entry point */
+    activate() {
+        return this.getReferenceData();
+    }
+&nbsp;
+    /** Event call back  */
+    changeCallback(event) {
+        return this.getEstablishmentReport();
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    public getImgUrl(</span>rating) {
+<span class="cstat-no" title="statement not covered" >      return require('../../../static/images/'+ rating +'</span>.jpg')
+<span class="fstat-no" title="function not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" ></span>
+    /** Get reference data  */
+    private getReferenceData() {
+        return this.referenceDataService.getAuthorities().then(response =&gt; this.fhrsAuthorities = response)
+    }
+&nbsp;
+    /** Get and set report data */
+    private getEstablishmentReport() {
+        try {
+            this.isDataLoading = true;
+            return this.reportDataService.getEstablishmentReport(this.selectedAuthority.localAuthorityId, this.selectedAuthority.schemeType).then(response =&gt; {
+                this.authorityReport = new AuthorityReport(response);
+<span class="cstat-no" title="statement not covered" >                this.isData</span>Loading = false
+            });
+        } catch (error) {
+<span class="cstat-no" title="statement not covered" >            console.log(e</span>rror);
+        }
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Mar 04 2018 17:18:03 GMT+0000 (GMT)
+</div>
+</div>
+<script src="prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="sorter.js"></script>
+</body>
+</html>

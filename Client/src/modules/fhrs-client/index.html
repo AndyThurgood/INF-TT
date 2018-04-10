@@ -1,0 +1,49 @@
+<template>
+    <require from="components/select2-attribute"></require>
+    <section class="overlay-layer-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <select select2 value.bind="selectedAuthority" style="width:100%" change.trigger="changeCallback($event)">
+                            <option></option>
+                            <option repeat.for="authority of fhrsAuthorities" model.bind="authority">${authority.name}</option>
+                            </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 single-service">
+                    <h3 class="colored-text"><i class="fa fa-pie-chart"></i> Results <strong if.bind="selectedAuthority && !isDataLoading">${selectedAuthority.name}</strong></h3>
+                    <div class="table-responsive">
+                        <table class="table table-colored table-sm ${isDataLoading == true ? 'loading' : ''}">
+                            <thead>
+                                <tr>
+                                    <th class="col-xs-4">
+                                        <h4 class="colored-text">Rating</h4>
+                                    </th>
+                                    <th class="col-xs-4"></th>
+                                    <th class="col-xs-4">
+                                        <h4 class="colored-text">Percentage</h4>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr repeat.for="rating of authorityReport.ratings">
+                                    <td>${rating.name}</td>
+                                    <td><img src="${getImgUrl(rating.ratingKey)}"></td>
+                                    <td>${rating.percentageDisplay()}%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <h4 if.bind="authorityReport.ratings" class="colored-text">Total Establishments: ${authorityReport.totalEstablishments}</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+</template>

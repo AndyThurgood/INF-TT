@@ -1,0 +1,808 @@
+@charset "UTF-8";
+
+/*---------------------------------------
+   1.1 GENERAL             
+-----------------------------------------*/
+
+html {
+	font-size: 100%;
+}
+
+body {
+	font-family: 'Open Sans', Helvetica Neue, Sans-serif;
+	font-size: 16px;
+	line-height: 28px;
+	font-weight: 300;
+	color: #313131;
+	overflow-x: hidden !important;
+	margin: auto !important;
+}
+
+ul,
+ol {
+	padding-left: 0 !important;
+}
+
+li {
+	list-style: none;
+}
+
+.fa-li {
+	position: inherit
+}
+
+/*---------------------------------------
+   1.2 PRE-LOADER              
+-----------------------------------------*/
+.preloader {
+	position: fixed;
+	text-align: center;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #fefefe;
+	z-index: 99999;
+	height: 100%;
+	width: 100%;
+	overflow: hidden !important;
+}
+
+.status {
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -20px 0 0 -20px;
+}
+
+/*---------------------------------------
+   1.3 ANCHOR AND BOLD TEXT           
+-----------------------------------------*/
+a {
+	text-decoration: none;
+	-webkit-transition: all ease 0.25s;
+	transition: all ease 0.25s;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+/*---------------------------------------
+   1.4 NAVBAR         
+-----------------------------------------*/
+
+.navbar-inverse .navbar-nav > li > a {
+	color: inherit;
+}
+
+.nav > li > a {
+	padding: inherit;
+}
+
+.navbar-nav.navbar-right:last-child {
+	margin-right: 0;
+}
+
+.navbar-inverse .navbar-nav > li > a:focus {
+	color: inherit;
+}
+
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover{
+		color: #fff!important;
+    	background-color: #039deb!important;
+}
+
+table {
+  width: 100%;
+}
+
+table thead,
+table tbody {
+  width: 100%;
+}
+
+table.loading tbody {
+    position: relative;
+}
+
+table.loading tbody:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ffffff;
+    background-image: url(./images/loader-blue.gif);background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50px 50px;
+    content: "";
+}
+
+/*---------------------------------------
+   2.1 TYPOGRAPHY      
+-----------------------------------------*/
+/* HEADINGS */
+h1,
+h2 {
+	font-family: 'Cabin', Helvetica Neue, Sans-serif;
+	font-weight: 400;
+}
+
+h1 {
+	font-size: 3.75rem;
+	line-height: 5rem;
+}
+
+h2 {
+	font-size: 2.4rem;
+	line-height: 3.125rem;
+}
+
+h2 strong {
+	color: #272727;
+}
+
+h3 {
+	font-size: 1.5rem;
+	line-height: 2.375rem;
+}
+
+h4 {
+	font-size: 1.25rem;
+	line-height: 1.875rem;
+}
+
+h5 {
+	font-size: 18px;
+	line-height: 28px;
+}
+
+/* OTHER TEXTS */
+strong,
+.strong {
+	font-weight: 600;
+}
+
+.dark-text {
+	color: #454545;
+}
+
+.transparent-text {
+	color: rgba(255, 255, 255, 0.6);
+}
+
+.transparent-text-dark {
+	color: rgba(49, 49, 49, 0.5);
+}
+
+.small-text {
+	font-size: 14px;
+}
+
+.small-text-medium {
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.line-through {
+	text-decoration: line-through;
+}
+
+.button-text {
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+/*---------------------------------------
+   2.2 BORDER AND LINE       
+-----------------------------------------*/
+.border-right {
+	border-right: 1px solid #eaeaea;
+}
+
+.border-left {
+	border-left: 1px solid #eaeaea;
+}
+
+.transparent-border-right {
+    border-right: 1px solid rgba(255,255,255,0.3);
+}
+
+.transparent-border-left {
+    border-left: 1px solid rgba(255,255,255,0.3);
+}
+
+.long-transparent-line-white {
+    height: 1px;
+    width: 200px;
+    background: rgba(255, 255, 255, 0.3);
+    margin: auto;
+}
+
+
+.colored-line-left,
+.colored-line-right,
+.colored-line,
+.white-line,
+.grey-line {
+	height: 2px;
+	width: 80px;
+	display: block;
+}
+
+.white-line {
+	background: #ffffff;
+	margin: auto;
+}
+
+.grey-line {
+	background: #eaebec;
+}
+
+.grey-line-short {
+	height: 2px;
+	width: 40px;
+	display: block;
+	background: #eaebec;
+}
+
+.white-text {
+	color: #ffffff;
+}
+
+a.white-text:hover {
+	color: #ffffff !important;
+}
+
+.white-bg-border {
+	background: #ffffff;
+	border-top: 1px solid #eaebec;
+	border-bottom: 1px solid #eaebec;
+}
+
+.white-bg {
+	background: #ffffff;
+}
+
+.grey-bg {
+	border-top: 1px solid #eaebec;
+	border-bottom: 1px solid #eaebec;
+	background: #F7F8FA;
+}
+
+.dark-bg {
+	background: #2e3336;
+}
+
+.colored-line-left {
+	float: left;
+}
+
+.colored-line-right {
+	float: right;
+}
+
+.colored-line {
+	margin: auto;
+}
+
+/*---------------------------------------
+   2.3 SECTION HEADERS       
+-----------------------------------------*/
+.section-header {
+	margin-top: 90px;
+	margin-bottom: 60px;
+}
+
+.section-header h2 {
+	margin-bottom: 20px;
+	margin-top: 10px;
+}
+
+.sub-heading {
+	margin-top: 20px;
+}
+
+.intro-section {
+    margin-top: 60px;
+	margin-bottom: 30px
+}
+
+/*---------------------------------------
+   3.1 SECTION: HOME / HEADER         
+-----------------------------------------*/
+.header {
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+
+.header .overlay-layer {
+	padding-top: 50px;
+	height: auto;
+	text-align: center;
+}
+
+/* STICKY NAVIGATION AND LOGO */
+.appear-on-scroll {
+	opacity: 0;
+}
+
+.sticky-navigation {
+	background: #ffffff;
+	min-height: 70px;
+	border: none;
+	font-weight: 400;
+	margin-bottom: 0 !important;
+	-webkit-backface-visibility: hidden;
+	-webkit-box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.08);
+	box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.08);
+}
+
+.sticky-navigation .navbar-brand {
+	padding: 18px 15px;
+}
+
+.sticky-navigation .navbar-brand img {
+	max-width: 40px;
+	-webkit-backface-visibility: hidden;
+}
+
+.sticky-navigation .main-navigation {
+	margin-top: 0;
+}
+
+.sticky-navigation .main-navigation li a {
+	text-transform: uppercase;
+	line-height: 34px;
+	padding: 18px;
+}
+
+.sticky-navigation .login-register {
+	margin-top: 0;
+}
+
+.sticky-navigation .login-register .login a {
+	text-transform: uppercase;
+	line-height: 34px;
+	padding: 18px;
+}
+
+.sticky-navigation .login-register .register-button {
+	margin-top: 15px;
+}
+
+.sticky-navigation .login-register .register-button a {
+	padding: 10px 15px 8px 15px;
+	border-radius: 3px;
+}
+
+/*---------------------------------------
+   3.2 SECTION: SERVICES    
+-----------------------------------------*/
+.single-service {
+	padding: 40px 35px 40px 35px;
+	margin: 50px 0;
+	background: #ffffff;
+	border-top: 1px solid #eaeaea;
+	border-left: 1px solid #eaeaea;
+	border-right: 1px solid #eaeaea;
+	border-bottom: 4px solid #eaeaea;
+	border-radius: 3px;
+	-webkit-transition: all ease 0.55s;
+	transition: all ease 0.55s;
+	min-height: 600px
+}
+
+.single-service .service-icon {
+	font-size: 60px;
+	margin-bottom: 35px;
+}
+
+.single-service h3 {
+	margin-bottom: 10px;
+}
+
+/*---------------------------------------
+   3.3 SECTION: FOOTER
+-----------------------------------------*/
+.footer {
+	padding-top: 40px;
+	padding-bottom: 40px;
+	text-align: center;
+}
+
+.footer-links li {
+	display: inline-block;
+	padding: 10px;
+}
+
+.footer-links li a:hover {
+	text-decoration: none;
+}
+
+.social-icons li {
+	display: inline-block;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+
+.social-icons li a:hover {
+	text-decoration: none;
+}
+
+.social-icons li a:hover .transparent-text-dark {
+	color: #313131;
+}
+
+/* PRELOADER IMAGE BACKGROUND */
+.status {
+	background-image: url(./images/loader-blue.gif);
+	background-repeat: no-repeat;
+	background-position: center;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
+
+/* THE OVERLAY COLORS WHICH WILL SHOW IN FRONT OF BACKGROUND IMAGES*/
+.overlay-layer,
+.overlay-layer-2 {
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#039deb), color-stop(100%,#005885));
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	/* IE10+ CSS styles go here */
+	.overlay-layer,
+	.overlay-layer-2 {
+	background: linear-gradient(135deg,  #039deb 0%,#005885 100%);
+	}
+}
+
+
+
+
+.overlay-layer-2 {
+	padding: 50px 0
+}
+
+
+/* NAVBAR AND LINK COLORS */
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:focus {
+  color: #008ed6;
+}
+
+a {
+	color: #008ed6;
+}
+
+a:hover {
+	color: #008ed6;
+}
+
+.border-bottom-hover:hover {
+	border-bottom-color: #008ed6;
+}
+
+.white-button:hover
+{
+	color: #008ed6 !important;
+}
+
+.sticky-navigation .main-navigation li a:hover,
+.sticky-navigation .login-register li.login a:hover {
+	color: #008ed6;
+}
+
+.sticky-navigation .main-navigation li.current a {
+	color: #008ed6;
+}
+
+/* INPUT FIXES */
+.input-box:active,
+.textarea-box:active,
+.input-box:focus,
+.textarea-box:focus {
+	border-color: #008ed6;
+}
+
+/* COLORED BACKGROUND AND TEXT*/
+.color-bg {
+	background: #008ed6;
+}
+
+.colored-text {
+	color: #008ed6;
+}
+
+/* COLORED BORDERS AND LINES */
+.colored-line-left,
+.colored-line-right,
+.colored-line {
+	background: #008ed6;
+}
+
+.border-right-colored {
+	border-right: 1px solid rgba(0, 142, 214, 0.3);
+}
+
+.border-left-colored {
+	border-left: 1px solid rgba(0, 142, 214, 0.3);
+}
+
+.long-transparent-line {
+	height: 1px;
+	width: 200px;
+	background: rgba(0, 142, 214, 0.3);
+	margin: auto;
+}
+
+/* --------------------------------------
+=========================================
+   4. RESPONSIVE CSS FIXES
+=========================================
+-----------------------------------------*/
+@media (min-width: 1200px) {
+	.vertical-registration-form {
+		width: 80%;
+	}
+}
+/*---------------------------------------
+   4.1 FIXES FOR 992PX to <= 1199PX SCREENS          
+-----------------------------------------*/
+@media (min-width: 992px) and (max-width: 1199px) {
+	html {
+		font-size: 90% !important;
+	}
+
+	body {
+		font-size: 15px;
+		line-height: 26px;
+	}
+}
+
+/*---------------------------------------
+   4.2 FIXES FOR <= 1024PX SCREENS          
+-----------------------------------------*/
+@media (max-width: 1024px) {
+	.header,
+    .features,
+    .stats {
+		background-attachment: scroll !important;
+	}
+
+    .header .overlay-layer {
+	   padding-top: 60px;
+    }
+
+    .intro-section {
+	   margin: 60px;
+    }
+
+	.feature .icon-container {
+		margin-right: 0;
+		padding-top: 14px;
+	}
+}
+
+/*---------------------------------------
+   4.3 FIXES FOR <= 991PX SCREENS          
+-----------------------------------------*/
+@media (max-width: 991px) {
+	html {
+		font-size: 90% !important;
+	}
+
+	body {
+		font-size: 15px;
+		line-height: 26px;
+	}
+
+	.pull-left,
+    .pull-right {
+		float: none !important;
+		margin: auto !important;
+	}
+
+	.text-left,
+    .text-right {
+		text-align: center;
+	}
+
+	.colored-line-left {
+		float: none;
+		margin: auto;
+	}
+
+	.border-right-colored,
+    .border-left-colored,
+    .border-left,
+    .border-right {
+		border: none !important;
+	}
+
+	.features {
+		background-image: none;
+	}
+
+	.single-feature {
+		margin-bottom: 28px;
+		width: 33%;
+		float: left;
+	}
+
+	.left-side .single-feature,
+    .right-side .single-feature {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	.feature .icon-container {
+		float: none;
+	}
+
+	.feature .description {
+		width: auto;
+		float: none;
+	}
+}
+
+/*---------------------------------------
+   4.4 FIXES FOR => 768PX to <= 991PX SCREENS          
+-----------------------------------------*/
+@media (min-width: 768px) and (max-width: 991px) {
+	html {
+		font-size: 95%;
+	}
+
+	.sticky-navigation {
+		min-height: 70px;
+	}
+
+	.sticky-navigation .navbar-brand img {
+		max-width: 80px;
+	}
+
+	.sticky-navigation .main-navigation li a {
+		line-height: 34px;
+		padding: 8px;
+	}
+
+	.sticky-navigation .main-navigation {
+		margin-top: 13px;
+	}
+
+	.sticky-navigation .login-register {
+		margin-top: 3px;
+	}
+}
+
+/*---------------------------------------
+   4.5 FIXES FOR <= 768PX SCREENS          
+-----------------------------------------*/
+@media (max-width: 767px) {
+	html {
+		font-size: 80%;
+	}
+
+	.navbar-toggle {
+		font-size: 30px !important;
+	}
+
+	.navbar-inverse .navbar-toggle {
+		border: 0 !important;
+	}
+
+	.navbar-inverse .navbar-toggle:hover,
+    .navbar-inverse .navbar-toggle:focus {
+		background-color: inherit;
+	}
+
+	.sticky-navigation .main-navigation li a {
+		line-height: inherit;
+		padding: 10px;
+	}
+
+	.border-right-colored,
+    .border-left-colored {
+		boreder: none;
+	}
+
+	.sticky-navigation {
+		min-height: 60px;
+	}
+
+	.nav > li {
+		display: inline-block;
+	}
+
+	.sticky-navigation .navbar-brand {
+		line-height: inherit;
+	}
+
+	.single-service {
+		margin: 54px 0 54px 0;
+	}
+
+	.section-header {
+		margin-top: 75px;
+		margin-bottom: 50px;
+	}
+
+	.features .overlay-layer-2 {
+		padding-bottom: 50px;
+	}
+
+	.highlighted {
+		margin-top: 0;
+	}
+}
+
+@media (max-width: 680px) {
+	.single-feature {
+		width: auto;
+		float: none;
+	}
+}
+
+/*---------------------------------------
+   4.6 FIXES FOR MOBILE SCREENS          
+-----------------------------------------*/
+@media (max-width: 580px) {
+	html {
+		font-size: 65% !important;
+	}
+
+	body {
+		font-size: 14px;
+		line-height: 23px;
+		font-weight: 400;
+	}
+	
+	h3,
+    h4 {
+		font-weight: 600;
+	}
+
+	h4 {
+		font-size: 16px;
+		line-height: 26px;
+	}
+
+	h5 {
+		font-size: 15px;
+		line-height: 24px;
+	}
+
+	.section-header {
+		margin-bottom: 25px;
+	}
+
+	.header .overlay-layer {
+	   padding-top: 55px;
+	   padding-bottom: 0;
+    }
+    .header .overlay-layer .pull-right {
+	   padding: 0;
+    }
+
+    .only-logo .navbar-header img {
+		max-width: 80px;
+	}
+
+	.intro-section {
+	   margin-top: 30px;
+    }
+
+	.intro-section h5 {
+		margin-top: 15px;
+		margin-bottom: 30px;
+	}
+}
+
